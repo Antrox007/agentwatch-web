@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "AgentWatch — Live monitor for Claude Code sessions",
   description:
     "A dynamic island for your terminal. AgentWatch watches every Claude Code session on Windows in real time — status, context pressure, token cost, rate limits — without polling, without telemetry.",
-  metadataBase: new URL("https://agentwatch-web.vercel.app"),
+  metadataBase: new URL("https://agentwatch-web-nu.vercel.app"),
   openGraph: {
     title: "AgentWatch — Live monitor for Claude Code sessions",
     description:
