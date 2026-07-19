@@ -1,4 +1,4 @@
-import { Pill } from "./Pill";
+import { DesktopMockup } from "./DesktopMockup";
 
 export function Hero() {
   return (
@@ -14,12 +14,12 @@ export function Hero() {
       />
 
       <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
-        <div className="animate-rise">
-          <Pill />
+        <div className="w-full animate-rise">
+          <DesktopMockup />
         </div>
 
         <h1
-          className="mt-10 text-balance text-[2.75rem] leading-[1.05] font-semibold tracking-tight text-text-primary animate-rise sm:text-6xl"
+          className="mt-9 text-balance text-[2.75rem] leading-[1.05] font-semibold tracking-tight text-text-primary animate-rise sm:text-6xl"
           style={{ fontFamily: "var(--font-display)", animationDelay: "0.08s" }}
         >
           Every Claude Code session,
