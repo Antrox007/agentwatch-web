@@ -1,9 +1,6 @@
-const RELEASES_BASE = "https://github.com/Antrox007/AgentWatch/releases/latest/download";
+import { IconGitHub } from "./icons";
 
-const DOWNLOADS = [
-  { label: "Download for x64", href: `${RELEASES_BASE}/AgentWatch-x64-setup.exe` },
-  { label: "Download for ARM64", href: `${RELEASES_BASE}/AgentWatch-arm64-setup.exe` },
-] as const;
+const RELEASES_URL = "https://github.com/Antrox007/AgentWatch/releases/latest";
 
 export function DownloadSection() {
   return (
@@ -25,26 +22,18 @@ export function DownloadSection() {
             Get AgentWatch
           </h2>
           <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-text-secondary">
-            Open source, built straight from{" "}
-            <a
-              href="https://github.com/Antrox007/AgentWatch"
-              className="text-text-primary underline decoration-white/25 underline-offset-2 hover:decoration-white/60"
-            >
-              GitHub
-            </a>
-            . Windows only, for now — x64 and ARM64.
+            Open source. Installers for x64 and ARM64 are attached to
+            every release on GitHub — no separate download host.
           </p>
 
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            {DOWNLOADS.map(({ label, href }) => (
-              <a
-                key={label}
-                href={href}
-                className="flex w-full items-center justify-center gap-2 rounded-full border border-white/[0.14] bg-white/[0.08] px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:bg-white/[0.14] sm:w-auto"
-              >
-                {label}
-              </a>
-            ))}
+          <div className="mt-8 flex justify-center">
+            <a
+              href={RELEASES_URL}
+              className="flex items-center justify-center gap-2.5 rounded-full border border-white/[0.14] bg-white/[0.08] px-7 py-3.5 text-sm font-medium text-text-primary transition-colors hover:bg-white/[0.14]"
+            >
+              <IconGitHub className="h-[18px] w-[18px]" />
+              View releases on GitHub
+            </a>
           </div>
 
           <p className="mx-auto mt-8 max-w-md text-[12.5px] leading-relaxed text-text-tertiary">
