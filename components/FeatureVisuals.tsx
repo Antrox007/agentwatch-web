@@ -1,22 +1,7 @@
-type DotState = "working" | "waiting" | "ready";
+import { StatusIcon, type Status } from "./StatusIcon";
 
-const DOT_COLOR: Record<DotState, string> = {
-  working: "var(--working)",
-  waiting: "var(--waiting)",
-  ready: "var(--ready)",
-};
-
-function Dot({ state, pulse }: { state: DotState; pulse?: boolean }) {
-  return (
-    <span
-      className="h-2 w-2 shrink-0 rounded-full"
-      style={{
-        background: DOT_COLOR[state],
-        boxShadow: `0 0 8px color-mix(in srgb, ${DOT_COLOR[state]} 60%, transparent)`,
-        animation: pulse ? "pulse-dot 1.6s ease-in-out infinite" : undefined,
-      }}
-    />
-  );
+function Dot({ state }: { state: Status }) {
+  return <StatusIcon status={state} size={13} />;
 }
 
 const visualBase = "rounded-xl bg-black/20 px-4 py-3";
@@ -26,7 +11,7 @@ export function RealtimeVisual() {
     <div className={`${visualBase} flex items-center justify-around`}>
       {(["working", "waiting", "ready"] as const).map((s) => (
         <div key={s} className="flex flex-col items-center gap-1.5">
-          <Dot state={s} pulse={s === "waiting"} />
+          <Dot state={s} />
           <span className="font-[family-name:var(--font-data)] text-[9px] text-text-tertiary">
             {s}
           </span>

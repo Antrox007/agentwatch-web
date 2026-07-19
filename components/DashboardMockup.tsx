@@ -1,3 +1,5 @@
+import { StatusIcon } from "./StatusIcon";
+
 type Pressure = "green" | "orange" | "red";
 
 type Row = {
@@ -50,12 +52,6 @@ const STATUS_LABEL: Record<Row["status"], string> = {
   ready: "ready",
 };
 
-const STATUS_COLOR: Record<Row["status"], string> = {
-  working: "var(--working)",
-  waiting: "var(--waiting)",
-  ready: "var(--ready)",
-};
-
 const PRESSURE_COLOR: Record<Pressure, string> = {
   green: "var(--ready)",
   orange: "var(--waiting)",
@@ -87,13 +83,7 @@ export function DashboardMockup() {
                 className="grid grid-cols-2 items-center gap-x-4 gap-y-2 py-4 sm:grid-cols-[1.4fr_0.9fr_1.3fr_0.7fr_0.7fr]"
               >
                 <div className="col-span-2 flex items-center gap-2.5 sm:col-span-1">
-                  <span
-                    className="h-2 w-2 shrink-0 rounded-full"
-                    style={{
-                      background: STATUS_COLOR[row.status],
-                      boxShadow: `0 0 8px color-mix(in srgb, ${STATUS_COLOR[row.status]} 60%, transparent)`,
-                    }}
-                  />
+                  <StatusIcon status={row.status} size={17} animate={false} className="shrink-0" />
                   <div className="min-w-0">
                     <p className="truncate text-sm font-medium text-text-primary">
                       {row.project}

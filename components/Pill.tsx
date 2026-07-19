@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { StatusIcon, type Status } from "./StatusIcon";
 
-type DotState = "working" | "waiting" | "ready" | "idle";
+type DotState = Status | "idle";
 
 type Frame = {
   dots: DotState[];
@@ -16,13 +17,6 @@ const SCRIPT: Frame[] = [
   { dots: ["working", "ready", "idle"], caption: "storefront — done, 3 files changed" },
   { dots: ["working", "working", "ready"], caption: null },
 ];
-
-const DOT_COLOR: Record<DotState, string> = {
-  working: "var(--working)",
-  waiting: "var(--waiting)",
-  ready: "var(--ready)",
-  idle: "rgba(255,255,255,0.18)",
-};
 
 export function Pill() {
   const [frame, setFrame] = useState(0);
@@ -43,27 +37,17 @@ export function Pill() {
 
   const dots = (
     <div className="flex items-center gap-3">
-      {current.dots.map((state, i) => (
-        <span
-          key={i}
-          className="relative flex h-3 w-3 items-center justify-center"
-        >
+      {current.dots.map((state, i) =>
+        state === "idle" ? (
           <span
-            className="block h-3 w-3 rounded-full"
-            style={{
-              background: DOT_COLOR[state],
-              animation:
-                !reduced && state === "waiting"
-                  ? "pulse-dot 1.4s ease-in-out infinite"
-                  : undefined,
-              boxShadow:
-                state !== "idle"
-                  ? `0 0 12px color-mix(in srgb, ${DOT_COLOR[state]} 65%, transparent)`
-                  : undefined,
-            }}
+            key={i}
+            className="block h-2.5 w-2.5 rounded-full"
+            style={{ background: "rgba(255,255,255,0.18)" }}
           />
-        </span>
-      ))}
+        ) : (
+          <StatusIcon key={i} status={state} size={15} animate={!reduced} />
+        ),
+      )}
     </div>
   );
 

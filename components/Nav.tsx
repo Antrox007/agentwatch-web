@@ -1,11 +1,12 @@
 import { IconGitHub } from "./icons";
+import { Logo } from "./Logo";
 
 export function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-6 pt-5">
       <nav className="glass flex w-full max-w-3xl items-center justify-between rounded-full px-5 py-2.5">
         <a href="#" className="flex items-center gap-2">
-          <span className="flex h-2 w-2 rounded-full bg-working shadow-[0_0_8px_color-mix(in_srgb,var(--working)_65%,transparent)]" />
+          <Logo size={18} />
           <span
             className="text-[14px] font-semibold tracking-tight text-text-primary"
             style={{ fontFamily: "var(--font-display)" }}
