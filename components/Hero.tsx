@@ -1,19 +1,25 @@
-import { Pill } from "./Pill";
-import { Taskbar } from "./Taskbar";
-import { WindowsWallpaper } from "./WindowsWallpaper";
+import { LaptopMockup } from "./LaptopMockup";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 pt-40 pb-32 sm:pt-48 sm:pb-36">
-      <WindowsWallpaper />
+    <section className="relative overflow-hidden px-6 pt-40 pb-28 sm:pt-48 sm:pb-36">
+      <div
+        className="glow-field"
+        style={{
+          background:
+            "radial-gradient(38% 55% at 22% 30%, color-mix(in srgb, var(--working) 55%, transparent), transparent 70%), radial-gradient(32% 45% at 78% 20%, color-mix(in srgb, var(--waiting) 45%, transparent), transparent 70%), radial-gradient(30% 45% at 55% 60%, color-mix(in srgb, var(--ready) 40%, transparent), transparent 70%)",
+          animation: "drift 18s ease-in-out infinite",
+        }}
+        aria-hidden
+      />
 
       <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
-        <div className="animate-rise">
-          <Pill />
+        <div className="w-full animate-rise">
+          <LaptopMockup />
         </div>
 
         <h1
-          className="mt-9 text-balance text-[2.75rem] leading-[1.05] font-semibold tracking-tight text-text-primary animate-rise sm:text-6xl"
+          className="mt-10 text-balance text-[2.75rem] leading-[1.05] font-semibold tracking-tight text-text-primary animate-rise sm:text-6xl"
           style={{ fontFamily: "var(--font-display)", animationDelay: "0.08s" }}
         >
           Every Claude Code session,
@@ -55,8 +61,6 @@ export function Hero() {
           Windows · ARM64 &amp; x64 · local-first · no telemetry
         </p>
       </div>
-
-      <Taskbar />
     </section>
   );
 }

@@ -13,7 +13,7 @@ type Row = {
 
 const ROWS: Row[] = [
   {
-    project: "desert-front",
+    project: "storefront",
     branch: "feature/checkout",
     status: "ready",
     subagents: 1,
@@ -23,7 +23,7 @@ const ROWS: Row[] = [
     cost: "$0.31",
   },
   {
-    project: "solid-rings-theme",
+    project: "billing-api",
     branch: "main",
     status: "working",
     subagents: 2,

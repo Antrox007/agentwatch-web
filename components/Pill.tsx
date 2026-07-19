@@ -13,7 +13,7 @@ const SCRIPT: Frame[] = [
   { dots: ["working", "working", "idle"], caption: null },
   { dots: ["working", "waiting", "idle"], caption: "agentwatch — waiting for input" },
   { dots: ["working", "waiting", "idle"], caption: null },
-  { dots: ["working", "ready", "idle"], caption: "desert-front — done, 3 files changed" },
+  { dots: ["working", "ready", "idle"], caption: "storefront — done, 3 files changed" },
   { dots: ["working", "working", "ready"], caption: null },
 ];
 

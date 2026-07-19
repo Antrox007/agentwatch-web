@@ -48,14 +48,14 @@ export function CopyPrompt() {
   };
 
   return (
-    <div className="glass-strong flex items-start gap-3 rounded-2xl px-5 py-4 text-left">
-      <p className="flex-1 font-[family-name:var(--font-data)] text-[12.5px] leading-relaxed text-text-secondary">
+    <div className="glass-strong flex flex-col gap-3 overflow-hidden rounded-2xl px-5 py-4 text-left sm:flex-row sm:items-start">
+      <p className="min-w-0 flex-1 break-words font-[family-name:var(--font-data)] text-[12.5px] leading-relaxed text-text-secondary">
         {PROMPT}
       </p>
       <button
         type="button"
         onClick={handleCopy}
-        className="flex shrink-0 items-center gap-1.5 rounded-full bg-white/[0.1] px-3.5 py-2 text-[12px] font-medium text-text-primary transition-colors hover:bg-white/[0.16]"
+        className="flex shrink-0 items-center justify-center gap-1.5 self-start rounded-full bg-white/[0.1] px-3.5 py-2 text-[12px] font-medium text-text-primary transition-colors hover:bg-white/[0.16]"
       >
         {copied ? (
           <CheckIcon className="h-3.5 w-3.5 text-[var(--ready)]" />
