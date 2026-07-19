@@ -1,8 +1,8 @@
-const BLOB_BASE = "https://qik6nepivbn8cqhx.public.blob.vercel-storage.com";
+const RELEASES_BASE = "https://github.com/Antrox007/AgentWatch/releases/latest/download";
 
 const DOWNLOADS = [
-  { label: "Download for x64", href: `${BLOB_BASE}/installers/AgentWatch-x64-setup.exe` },
-  { label: "Download for ARM64", href: `${BLOB_BASE}/installers/AgentWatch-arm64-setup.exe` },
+  { label: "Download for x64", href: `${RELEASES_BASE}/AgentWatch-x64-setup.exe` },
+  { label: "Download for ARM64", href: `${RELEASES_BASE}/AgentWatch-arm64-setup.exe` },
 ] as const;
 
 export function DownloadSection() {
@@ -25,8 +25,14 @@ export function DownloadSection() {
             Get AgentWatch
           </h2>
           <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-text-secondary">
-            Native installers, built fresh from source. Windows only, for
-            now — x64 and ARM64.
+            Open source, built straight from{" "}
+            <a
+              href="https://github.com/Antrox007/AgentWatch"
+              className="text-text-primary underline decoration-white/25 underline-offset-2 hover:decoration-white/60"
+            >
+              GitHub
+            </a>
+            . Windows only, for now — x64 and ARM64.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
@@ -42,10 +48,10 @@ export function DownloadSection() {
           </div>
 
           <p className="mx-auto mt-8 max-w-md text-[12.5px] leading-relaxed text-text-tertiary">
-            Installers ship unsigned for now — Windows SmartScreen will
-            warn on first launch. Choose{" "}
+            Installers ship unsigned — Windows SmartScreen will warn on
+            first launch. Choose{" "}
             <span className="text-text-secondary">More info → Run anyway</span>.
-            Code signing is planned.
+            The source is public, so you can build it yourself instead.
           </p>
         </div>
       </div>

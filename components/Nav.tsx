@@ -1,3 +1,5 @@
+import { IconGitHub } from "./icons";
+
 export function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-6 pt-5">
@@ -11,7 +13,7 @@ export function Nav() {
             AgentWatch
           </span>
         </a>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-5 sm:gap-6">
           <a
             href="#features"
             className="hidden text-[13px] text-text-secondary transition-colors hover:text-text-primary sm:block"
@@ -23,6 +25,13 @@ export function Nav() {
             className="hidden text-[13px] text-text-secondary transition-colors hover:text-text-primary sm:block"
           >
             Architecture
+          </a>
+          <a
+            href="https://github.com/Antrox007/AgentWatch"
+            aria-label="Source on GitHub"
+            className="text-text-secondary transition-colors hover:text-text-primary"
+          >
+            <IconGitHub className="h-[18px] w-[18px]" />
           </a>
           <a
             href="#download"
