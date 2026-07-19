@@ -62,8 +62,8 @@ function VolumeIcon({ className }: { className?: string }) {
 
 export function Taskbar() {
   return (
-    <div className="absolute inset-x-0 bottom-0 flex h-14 items-center border-t border-white/[0.08] bg-black/40 backdrop-blur-xl">
-      <div className="flex flex-1 items-center justify-center gap-3">
+    <div className="absolute inset-x-0 bottom-0 h-14 border-t border-white/[0.08] bg-black/40 backdrop-blur-xl">
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-3">
         <StartIcon className="h-[18px] w-[18px] text-white/75" />
         <SearchIcon className="h-4 w-4 text-white/50" />
         <div className="ml-1 flex gap-2">
@@ -75,7 +75,7 @@ export function Taskbar() {
           ))}
         </div>
       </div>
-      <div className="mr-5 hidden items-center gap-3 sm:flex">
+      <div className="absolute right-5 top-1/2 hidden -translate-y-1/2 items-center gap-3 sm:flex">
         <WifiIcon className="h-[15px] w-[15px] text-white/45" />
         <VolumeIcon className="h-[15px] w-[15px] text-white/45" />
         <span className="font-[family-name:var(--font-data)] text-[11px] text-white/45">
