@@ -1,6 +1,6 @@
 import { Architecture } from "@/components/Architecture";
-import { DashboardMockup } from "@/components/DashboardMockup";
 import { DownloadSection } from "@/components/DownloadSection";
+import { ExplainerVisual } from "@/components/ExplainerVisual";
 import { FeatureGrid } from "@/components/FeatureGrid";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
@@ -12,7 +12,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <DashboardMockup />
+        <ExplainerVisual />
         <FeatureGrid />
         <Architecture />
         <DownloadSection />
