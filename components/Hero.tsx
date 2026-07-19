@@ -2,7 +2,7 @@ import { LaptopMockup } from "./LaptopMockup";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 pt-40 pb-28 sm:pt-48 sm:pb-36">
+    <section className="relative overflow-hidden px-6 pt-32 pb-28 sm:pt-40 sm:pb-36">
       <div
         className="glow-field"
         style={{
@@ -13,22 +13,22 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center text-center">
         <div className="w-full animate-rise">
-          <LaptopMockup />
+          <LaptopMockup>
+            <h1
+              className="text-balance text-[2.25rem] leading-[1.05] font-semibold tracking-tight text-text-primary sm:text-6xl"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Every Claude Code session,
+              <br />
+              <span className="text-text-secondary">watched live.</span>
+            </h1>
+          </LaptopMockup>
         </div>
 
-        <h1
-          className="mt-10 text-balance text-[2.75rem] leading-[1.05] font-semibold tracking-tight text-text-primary animate-rise sm:text-6xl"
-          style={{ fontFamily: "var(--font-display)", animationDelay: "0.08s" }}
-        >
-          Every Claude Code session,
-          <br />
-          <span className="text-text-secondary">watched live.</span>
-        </h1>
-
         <p
-          className="mt-6 max-w-xl text-balance text-[1.0625rem] leading-relaxed text-text-secondary animate-rise sm:text-lg"
+          className="mt-10 max-w-xl text-balance text-[1.0625rem] leading-relaxed text-text-secondary animate-rise sm:text-lg"
           style={{ animationDelay: "0.16s" }}
         >
           A dynamic island for your terminal. Status, context pressure,
